@@ -120,7 +120,8 @@ func sqrt(x float64) (float64, error) {
 // take an integer and increment its value
 // to increment the value we need to pass pointer to that integer
 func inc(x *int) {
-	*x++
+	*x++ // dereference the pointer and increment the value
+	// notice there is no return statement in the functions, we increment the value of the varibale at the given memory location
 }
 
 // go does not have exceptions
