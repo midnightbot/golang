@@ -6,6 +6,12 @@ import (
 	"math"
 )
 
+// structure in go
+type person struct {
+	name string
+	age  int
+}
+
 func main() {
 	/*
 		var x int = 5
@@ -83,6 +89,20 @@ func main() {
 	} else {
 		fmt.Println(result0)
 	}
+
+	// using struct
+	p := person{name: "Anish", age: 23}
+	fmt.Println(p)
+	fmt.Println(p.name)
+
+	// pointers
+	j := 7
+	fmt.Println(j, &j)
+
+	// pointers in functions
+	k := 7
+	inc(&k)
+	fmt.Println(k)
 }
 
 func sum(x int, y int) int {
@@ -95,6 +115,12 @@ func sqrt(x float64) (float64, error) {
 		return 0, errors.New("Undefined Negative Number")
 	}
 	return math.Sqrt(x), nil
+}
+
+// take an integer and increment its value
+// to increment the value we need to pass pointer to that integer
+func inc(x *int) {
+	*x++
 }
 
 // go does not have exceptions
